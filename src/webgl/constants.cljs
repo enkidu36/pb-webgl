@@ -12,8 +12,6 @@
 
 ;; Rendering primitives
 ;; Constants passed to WebGLRenderingContext.drawElements() or WebGLRenderingContext.drawArrays() to specify what kind of primitive to render.
-
-;; Constant name	Value	Description
 (def POINTS	0x0000) ;; Passed to drawElements or drawArrays to draw single points.
 (def LINES	0x0001) ;; Passed to drawElements or drawArrays to draw lines. Each vertex connects to the one after it.
 (def LINE-LOOP	0x0002) ;; Passed to drawElements or drawArrays to draw lines. Each set of two vertices is treated as a separate line segment.
@@ -21,6 +19,11 @@
 (def TRIANGLES	0x0004) ;; Passed to drawElements or drawArrays to draw triangles. Each set of three vertices creates a separate triangle.
 (def TRIANGLE-STRIP	0x0005) ;; Passed to drawElements or drawArrays to draw a connected group of triangles.
 (def TRIANGLE-FAN	0x0006) ;; Passed to drawElements or drawArrays to draw a connected group of triangles. Each vertex connects to the previous and the first vertex in the fan.
+
+;; Blending modes
+;; Constants passed to webGLRenderingContext.blendFun(). or
+;; WebGLRenderingContext.blendFuncSeparate(). to specify the blending mode (for both, RGB and alpha, or seperately).
+(def ZERO 0) Passed to blendFunc or blendFuncSeparate to turn off a component.
 
 ;; Getting GL parameter information
 ;; Constants passed to WebGLRenderingContext.getParameter () to specify what information to return.
