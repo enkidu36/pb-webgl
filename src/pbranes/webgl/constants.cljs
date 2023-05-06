@@ -9,10 +9,9 @@
 (def STENCIL-BUFFER-BIT	0x00000400) ;; Passed to clear to clear the current stencil buffer.
 (def COLOR-BUFFER-BIT	0x00004000) ;; Passed to clear to clear the current color buffer.
 
-
 ;; Rendering primitives
 ;; Constants passed to WebGLRenderingContext.drawElements() or WebGLRenderingContext.drawArrays() to specify what kind of primitive to render.
-(Def POINTS	0x0000) ;; Passed to drawElements or drawArrays to draw single points.
+(def POINTS	0x0000) ;; Passed to drawElements or drawArrays to draw single points.
 (def LINES	0x0001) ;; Passed to drawElements or drawArrays to draw lines. Each vertex connects to the one after it.
 (def LINE-LOOP	0x0002) ;; Passed to drawElements or drawArrays to draw lines. Each set of two vertices is treated as a separate line segment.
 (def LINE-STRIP	0x0003) ;; Passed to drawElements or drawArrays to draw a connected group of line segments from the first vertex to the last.
