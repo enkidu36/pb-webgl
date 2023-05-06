@@ -28,3 +28,12 @@
 ;; Getting GL parameter information
 ;; Constants passed to WebGLRenderingContext.getParameter () to specify what information to return.
 (def COLOR-CLEAR-VALUE 0x0C22)
+
+;; Buffers
+(def STATIC-DRAW 0x88E4)
+(def STREAM-DRAW 0x88E0)
+(def DYNAMIC-DRAW 0x88E8)
+(def ARRAY-BUFFER 0x8892)
+(def ELEMENT-ARRAY-BUFFER 0x8893)
+(def BUFFER-SIZE 0x8764)
+(def BUFFER-USAGE 0x8765)
