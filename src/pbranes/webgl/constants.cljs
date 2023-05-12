@@ -1,32 +1,109 @@
+
 (ns pbranes.webgl.constants
   (:refer-clojure :exclude [float byte int short keep repeat replace ]))
 
 ;; Standard WebGL 1 Contants
 
 ;; Clearing buffers
-;; Constants passe to clear buffer masks
-(def DEPTH-BUFFER-BIT	0x00000100) ;; Passed to clear to clear the current depth buffer.
-(def STENCIL-BUFFER-BIT	0x00000400) ;; Passed to clear to clear the current stencil buffer.
-(def COLOR-BUFFER-BIT	0x00004000) ;; Passed to clear to clear the current color buffer.
+(def DEPTH-BUFFER-BIT	0x00000100) 
+(def STENCIL-BUFFER-BIT	0x00000400) 
+(def COLOR-BUFFER-BIT	0x00004000) 
 
 ;; Rendering primitives
-;; Constants passed to WebGLRenderingContext.drawElements() or WebGLRenderingContext.drawArrays() to specify what kind of primitive to render.
-(def POINTS	0x0000) ;; Passed to drawElements or drawArrays to draw single points.
-(def LINES	0x0001) ;; Passed to drawElements or drawArrays to draw lines. Each vertex connects to the one after it.
-(def LINE-LOOP	0x0002) ;; Passed to drawElements or drawArrays to draw lines. Each set of two vertices is treated as a separate line segment.
-(def LINE-STRIP	0x0003) ;; Passed to drawElements or drawArrays to draw a connected group of line segments from the first vertex to the last.
-(def TRIANGLES	0x0004) ;; Passed to drawElements or drawArrays to draw triangles. Each set of three vertices creates a separate triangle.
-(def TRIANGLE-STRIP	0x0005) ;; Passed to drawElements or drawArrays to draw a connected group of triangles.
-(def TRIANGLE-FAN	0x0006) ;; Passed to drawElements or drawArrays to draw a connected group of triangles. Each vertex connects to the previous and the first vertex in the fan.
+(def POINTS	0x0000) 
+(def LINES	0x0001) 
+(def LINE-LOOP	0x0002) 
+(def LINE-STRIP	0x0003) 
+(def TRIANGLES	0x0004) 
+(def TRIANGLE-STRIP	0x0005) 
+(def TRIANGLE-FAN	0x0006)
 
 ;; Blending modes
-;; Constants passed to webGLRenderingContext.blendFun(). or
-;; WebGLRenderingContext.blendFuncSeparate(). to specify the blending mode (for both, RGB and alpha, or seperately).
-(def ZERO 0) ;;  Passed to blendFunc or blendFuncSeparate to turn off a component.
+(def ZERO 0)
+(def ONE 1)
+(def SRC-COLOR 0x0300)
+(def ONE-MINUS-SRC-COLOR 0x0301)
+(def SRC-ALPA 0x0302)
+(def ONE-MINUS-SRC-ALPHA 0x0303)
+(def DST-ALPA 0x0304)
+(def ONE-MINUS-DST-ALPHA 0x0305)
+(def DST-COLOR 0x0306)
+(def ONE-MINUS-DST-COLOR 0x0307)
+(def SRC-ALPHA-SATURATE 0x0308)
+(def CONSTANT-COLOR 0x8001)
+(def ONE-MINUS-CONSTANT-COLOR 0x8002)
+(def CONSTANT-ALPHA 0x8003)
+(def ONE-MINUS-CONSTANT-ALPHA 0x8004)
+
+;; Blending equations
+(def FUNC-ADD 0x8005)
+(def FUNC-SUBTRACT 0x800A)
+(def FUNC-REVERSE-SUBTRACT 0x800B)
 
 ;; Getting GL parameter information
-;; Constants passed to WebGLRenderingContext.getParameter () to specify what information to return.
+(def BLEND-EQUATION 0x8009)
+(def BLEND-EQUATION-RGB 0x8009)
+(def BLEAD-EQUATION-ALPHA 0x883D)
+(def BLEND-DST-RGB 0x80C8)
+(def BLEND-SRC-RGB 0x80C9)
+(def BLEND-DST-ALPHA 0x80CA)
+(def BLEND-SRC-ALPHA 0x80CB)
+(def BLEND-COLOR 0x8005)
+(def ARRAY-BUFFER-BINDING 0x8894)
+(def ELEMENT-ARRAY-BUFFER-BINDING 0x8895)
+(def LINE-WIDTH 0x0B21)
+(def ALIASED-POINT-SIZE-RANGE 0x846D)
+(def ALIASED-LINE-WIDTH-RANGE 0x846E)
+(def CULL-FACE-MODE 0x0B45)
+(def FRONT-FACE 0x0B46)
+(def DEPTH-RANGE 0x0B70)
+(def DEPTH-WRITEMASK 0x0B72)
+(def DEPTH-CLEAR-VALUE 0x0B73)
+(def DEPTH-FUNC 0x0B74)
+(def STENCIL-CLEAR-VALUE 0x0B91)
+(def STENCIL-FUNC 0x0B92)
+(def STENCIL-FAIL 0x0B94)
+(def STENCIL-PASS-DEPTH-FAIL 0x0B95)
+(def STENCIL-PASS-DEPTH-PASS 0x0B96)
+(def STENCIL-REF 0x0B97)
+(def STENCIL-VALUE-MASK 0x0B93)
+(def STENCIL-WRITEMASK 0x0B98)
+(def STENCIL-BACK-FUNC 0x8800)
+(def STENCIL-BACK-FAIL 0x8801)
+(def STENCIL-BACK-PASS-DEPTH-FAIL 0x8802)
+(def STENCIL-BACK-PASS-DEPTH-PASS 0x8803)
+(def STENCIL-BACK-REF 0x8CA3)
+(def STENCIL-BACK-VALUE-MASK 0x8CA4)
+(def STENCIL-BACK-WRITEMASK 0x8CA5)
+(def VIEWPORT 0x0BA2)
+(def SCISSOR-BOX 0x0C10)
 (def COLOR-CLEAR-VALUE 0x0C22)
+(def COLOR-WRITEMASK 0xC23)
+(def UNPACK-ALIGNMENT 0x0CF5)
+(def PACK-ALIGNMENT 0x0D0F)
+(def MAX-TEXTURE-SIZE 0x0D33)
+(def MAX-VIEWPORT-DIMS 0x0D3A)
+(def SUBPIXEL-BITS 0x0D50)
+(def RED-BITS 0x0D52)
+(def GREEN-BITS 0x0D53)
+(def BLUE-BITS 0x0D54)
+(def ALPHA-BITS 0x0D55)
+(def DEPTH-BITS 0x0D56)
+(def STENCIL-BITS 0x0D57)
+(def POLYGON-OFFSET-UNITS 0x2A00)
+(def POLYGON-OFFSET-FACTOR 0x8038)
+(def TEXTURE-BINDING-2D 0x8069)
+(def SAMPLER-BUFFERS 0x8069)
+(def SAMPLES 0x80A9)
+(def SAMPLE-COVERAGE-VALUE 0x80AA)
+(def SAMPLE-COVERAGE-INVERT 0x80AB)
+(def COMPRESSED-TEXTURE-FORMATS 0x86A3)
+(def VENDOR 0x1F00)
+(def RENDERER 0x1F01)
+(def VERSION 0x1F02)
+(def IMPLEMENTATION-COLOR-READ-TYPE 0x8B9A)
+(def IMPLEMENTATION-COLOR-READ-FORMAT 0x8B9B)
+(def BROWSER-DEFAULT-WEBGL 0x9244)
 
 ;; Buffers
 (def STATIC-DRAW 0x88E4)
